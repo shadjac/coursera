@@ -1,0 +1,14 @@
+imports:
+  - path: instance.jinja
+  - path: install-echo.sh
+    name: startup-script
+resources:
+  - name: instance
+    type: instance.jinja
+    properties:
+      zone: asia-south1-c
+      tags: 
+        - http
+      metadata:
+        - key: echo
+          value: https://storage.googleapis.com/my-py-echo-app-73584/echo-0.0.1.tar.gz
